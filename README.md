@@ -49,10 +49,10 @@ handlers:
         state: restarted
 |Имя таска	| Описание |
 | ------------- |:------------------:|
-| Vector | Download packages	Скачивание RPM пакетов в текущую директорию пользователя |
-| Vector | Install packages	Установка RPM пакетов. Используем disable_gpg_check: true для отключения проверки GPG подписи пакетов |
-| Vector | Apply template	Применяем шаблон конфига vector. Здесь мы задаем путь конфига. Владельцем назначаем текущего пользователя ansible. После применения запускаем валидацию конфига |
-| Vector | change systemd unit	Изменяем модуль службы vector. После этого указываем handler для старта службы vector |
+| Vector download packages |	Скачивание RPM пакетов в текущую директорию пользователя |
+| Vector install packages	Установка RPM пакетов. Используем disable_gpg_check: true для отключения проверки GPG подписи пакетов |
+| Vector apply template |	Применяем шаблон конфига vector. Здесь мы задаем путь конфига. Владельцем назначаем текущего пользователя ansible. После применения запускаем валидацию конфига |
+| Vector change systemd unit	| Изменяем модуль службы vector. После этого указываем handler для старта службы vector |
 
 ### Template
 
