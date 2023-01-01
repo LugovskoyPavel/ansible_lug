@@ -4,6 +4,7 @@
 ### group_vars
 
 Описание переменных.
+
 | Имя переменной | Описание |
 | clickhouse_version | версия Clickhouse |
 | clickhouse_packages | пакеты Clickhouse, которые необходимо скачать |
