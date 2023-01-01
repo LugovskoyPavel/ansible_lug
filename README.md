@@ -4,12 +4,12 @@
 #group_vars
 
 Описание переменных.
-|Имя переменной| Описание|
-|clickhouse_version |версия Clickhouse
-|clickhouse_packages|пакеты Clickhouse, которые необходимо скачать|
-|vector_url|URL адрес для скачивания RPM пакетов Vector|
-|vector_version|версия Vector|
-|vector_home|каталог для скачивания RPM пакетов Vector|
+| Имя переменной | Описание |
+| clickhouse_version | версия Clickhouse |
+| clickhouse_packages | пакеты Clickhouse, которые необходимо скачать |
+| vector_url | URL адрес для скачивания RPM пакетов Vector |
+| vector_version | версия Vector |
+| vector_home | каталог для скачивания RPM пакетов Vector |
 
 Inventory файл
 Группа хостов "clickhouse" состоит из 1 хоста clickhouse1
