@@ -1,13 +1,22 @@
 ---
-vector:
-  hosts:
-    vector1:
-      ansible_host: lugy2@192.168.161.131
-      ansible_password: 8123622940
-      ansible_sudo_pass: 8123622940
 clickhouse:
   hosts:
     clickhouse1:
-      ansible_host: lugy2@192.168.161.133
+      ansible_host: 192.168.161.134
+      ansible_user: lugy2
+      ansible_password: 8123622940
+      ansible_sudo_pass: 8123622940
+vector:
+  hosts:
+    vector1:
+      ansible_host: 192.168.161.136
+      ansible_user: lugy2
+      ansible_password: 8123622940
+      ansible_sudo_pass: 8123622940
+lighthouse:
+  hosts:
+    lighthouse1:
+      ansible_host: 192.168.161.135
+      ansible_user: lugy2
       ansible_password: 8123622940
       ansible_sudo_pass: 8123622940
