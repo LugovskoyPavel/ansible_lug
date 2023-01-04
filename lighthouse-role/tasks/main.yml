@@ -1,0 +1,13 @@
+---
+- name: Lighthouse | Clone repository
+      ansible.builtin.git:
+        repo: "{{ lighthouse_url }}"
+        dest: "{{ lighthouse_dir }}"
+        version: master
+- name: Lighthouse | Apply config
+      become: true
+      ansible.builtin.template:
+        src: lighthouse_nginx.conf.j2
+        dest: /etc/nginx/conf.d/lighthouse.conf
+        mode: 0644
+      notify: Nginx reload

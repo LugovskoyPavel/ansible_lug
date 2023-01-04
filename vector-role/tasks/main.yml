@@ -1,0 +1,29 @@
+---
+- name: Vector | Download packages
+    ansible.builtin.get_url:
+      url: "{{ vector_url }}"
+      dest: "./vector-{{ vector_version }}-1.x86_64.rpm"
+- name: Vector | Install packages
+    become: true
+      ansible.builtin.yum:
+        name: "./vector-{{ vector_version }}-1.x86_64.rpm"
+        disable_gpg_check: true
+- name: Vector | Apply template
+    become: true
+      ansible.builtin.template:
+        src: vector.yml.j2
+        dest: "{{ vector_config_dir }}/vector.yml"
+        mode: "0644"
+        owner: "{{ ansible_user_id }}"
+        group: "{{ ansible_user_gid }}"
+        validate: vector validate --no-environment --config-yaml %s
+- name: Vector | change systemd unit
+    become: true
+      ansible.builtin.template:
+        src: vector.service.j2
+        dest: /usr/lib/systemd/system/vector.service
+        mode: "0644"
+        owner: "{{ ansible_user_id }}"
+        group: "{{ ansible_user_gid }}"
+        backup: true
+      notify: Start Vector service
